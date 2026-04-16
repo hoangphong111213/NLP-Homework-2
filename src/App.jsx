@@ -212,7 +212,9 @@ export default function App() {
       padding: '12px 24px',
       display: 'flex',
       justifyContent: 'space-between',
-      alignItems: 'center'
+      alignItems: 'center',
+      position: 'relative',
+      zIndex: 10
     }}>
       {/* Left: Logo and title */}
       <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
@@ -230,7 +232,7 @@ export default function App() {
         }}>
           s
         </div>
-        <div style={{ fontWeight: 'bold', fontSize: '18px' }}>
+        <div style={{ fontWeight: 'bold', fontSize: '18px', color: '#6c3fa0' }}>
           SubmitHub
         </div>
       </div>
@@ -265,12 +267,12 @@ export default function App() {
         <div style={{
           width: '36px',
           height: '36px',
-          backgroundColor: '#999',
+          backgroundColor: '#f0f0f0',
           borderRadius: '50%',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          color: '#fff',
+          color: '#6c3fa0',
           fontSize: '13px',
           fontWeight: 'bold'
         }}>
@@ -279,9 +281,9 @@ export default function App() {
         <button
           style={{
             padding: '6px 12px',
-            backgroundColor: 'transparent',
-            color: '#6c3fa0',
-            border: '1px solid #6c3fa0',
+            backgroundColor: '#6c3fa0',
+            color: '#fff',
+            border: 'none',
             borderRadius: '4px',
             cursor: 'pointer',
             fontSize: '14px'
