@@ -102,7 +102,7 @@ export default function App() {
               backgroundColor: isSubmitted ? '#d4edda' : '#fff3cd',
               color: isSubmitted ? '#155724' : '#856404'
             }}>
-              {assignment.status}
+              • {assignment.status}
             </div>
 
             {/* Action button */}
@@ -111,9 +111,9 @@ export default function App() {
               style={{
                 padding: '8px 16px',
                 borderRadius: '4px',
-                border: isSubmitted ? '1px solid #333' : 'none',
-                backgroundColor: isSubmitted ? 'transparent' : '#333',
-                color: isSubmitted ? '#333' : '#fff',
+                border: '1px solid #6c3fa0',
+                backgroundColor: 'transparent',
+                color: '#6c3fa0',
                 cursor: 'pointer',
                 fontSize: '14px',
                 fontWeight: '500',
@@ -136,13 +136,14 @@ export default function App() {
                 </div>
                 <div style={{ marginBottom: '12px' }}>
                   {mockFiles.map((file, idx) => (
-                    <div key={idx} style={{ padding: '8px 0', fontSize: '14px', color: '#333' }}>
-                      📄 {file.name} — {file.size}
+                    <div key={idx} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 0', fontSize: '14px', color: '#333', borderBottom: '1px solid #e0e0e0' }}>
+                      <span>{file.name}</span>
+                      <span>{file.size}</span>
                     </div>
                   ))}
                 </div>
-                <div style={{ fontSize: '12px', fontStyle: 'italic', color: '#999' }}>
-                  Note: This is mock submission data for demonstration.
+                <div style={{ fontSize: '12px', color: '#666' }}>
+                  Note: This is mock data. In a real app, files would be downloadable or viewable.
                 </div>
               </div>
             ) : (
@@ -158,7 +159,11 @@ export default function App() {
                     marginBottom: '12px'
                   }}
                 >
-                  <div style={{ fontSize: '32px', marginBottom: '8px' }}>☁️</div>
+                  <svg style={{ width: '40px', height: '40px', margin: '0 auto 12px', display: 'block' }} viewBox="0 0 24 24" fill="none" stroke="#bbb" strokeWidth="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="17 8 12 3 7 8"></polyline>
+                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                  </svg>
                   <div style={{ fontSize: '14px', color: '#333', marginBottom: '4px' }}>
                     Drag and drop files here, or{' '}
                     <span style={{ color: '#0066cc', cursor: 'pointer', textDecoration: 'underline' }}>
@@ -172,7 +177,7 @@ export default function App() {
                       padding: '8px 16px',
                       borderRadius: '4px',
                       border: 'none',
-                      backgroundColor: '#333',
+                      backgroundColor: '#6c3fa0',
                       color: '#fff',
                       cursor: 'pointer',
                       fontSize: '14px',
@@ -335,7 +340,7 @@ export default function App() {
       <div style={{ flex: 1, padding: '32px', backgroundColor: '#fff' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           {/* Title */}
-          <div style={{ fontSize: '28px', fontWeight: 'bold', marginBottom: '24px' }}>
+          <div style={{ fontSize: '28px', fontWeight: 'bold', marginBottom: '24px', color: '#6c3fa0' }}>
             {activeTab === 'active' ? 'Active Assignments' : activeTab === 'past' ? 'Past Submissions' : 'Grades'}
           </div>
 
