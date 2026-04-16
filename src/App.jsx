@@ -119,8 +119,11 @@ export default function App() {
                 fontSize: '14px',
                 fontWeight: '500',
                 whiteSpace: 'nowrap',
-                width: '120px',
-                height: '36px'
+                width: '140px',
+                height: '36px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
               }}
             >
               {isExpanded ? (isSubmitted ? 'Hide Submission' : 'Cancel') : (isSubmitted ? 'View Submission' : 'Upload Files')}
@@ -139,7 +142,7 @@ export default function App() {
                 </div>
                 <div style={{ marginBottom: '12px' }}>
                   {mockFiles.map((file, idx) => (
-                    <div key={idx} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 0', fontSize: '14px', color: '#333', borderBottom: '1px solid #e0e0e0', backgroundColor: '#fff' }}>
+                    <div key={idx} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 0', fontSize: '14px', color: '#333', borderBottom: '1px solid #f0f0f0' }}>
                       <span>{file.name}</span>
                       <span>{file.size}</span>
                     </div>
@@ -163,7 +166,8 @@ export default function App() {
                   }}
                 >
                   <svg style={{ width: '48px', height: '48px', margin: '0 auto 12px', display: 'block' }} viewBox="0 0 24 24" fill="none" stroke="#bbb" strokeWidth="2">
-                    <path d="M19 14c1.49-1.46 2.5-3.48 2.5-5.5A6.5 6.5 0 0 0 15 2c-1.8 0-3.5.5-5 1.33C7.5 2.5 5.8 2 4 2a6.5 6.5 0 0 0-6.5 6.5c0 2.02 1.01 4.04 2.5 5.5M12 8v8m0 0l-3-3m3 3l3-3"></path>
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <path d="M7 10l5-5 5 5M12 15V5"></path>
                   </svg>
                   <div style={{ fontSize: '14px', color: '#333', marginBottom: '4px' }}>
                     Drag and drop files here, or{' '}
@@ -183,8 +187,11 @@ export default function App() {
                       cursor: 'pointer',
                       fontSize: '14px',
                       fontWeight: '500',
-                      width: '120px',
-                      height: '36px'
+                      width: '140px',
+                      height: '36px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center'
                     }}
                   >
                     Submit
@@ -213,7 +220,7 @@ export default function App() {
           width: '40px',
           height: '40px',
           backgroundColor: '#6c3fa0',
-          borderRadius: '4px',
+          borderRadius: '50%',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -221,7 +228,7 @@ export default function App() {
           fontWeight: 'bold',
           fontSize: '20px'
         }}>
-          S
+          s
         </div>
         <div style={{ fontWeight: 'bold', fontSize: '18px' }}>
           SubmitHub
