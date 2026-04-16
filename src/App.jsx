@@ -71,10 +71,11 @@ export default function App() {
     return (
       <div style={{
         border: '1px solid #ddd',
-        borderRadius: '8px',
-        padding: '16px',
+        borderRadius: '12px',
+        padding: '24px',
         marginBottom: '16px',
-        backgroundColor: '#fff'
+        backgroundColor: '#fff',
+        boxShadow: '0 1px 4px rgba(0, 0, 0, 0.05)'
       }}>
         {/* Main card content */}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: isExpanded ? '16px' : '0' }}>
@@ -111,13 +112,15 @@ export default function App() {
               style={{
                 padding: '8px 16px',
                 borderRadius: '4px',
-                border: '1px solid #6c3fa0',
-                backgroundColor: 'transparent',
-                color: '#6c3fa0',
+                border: isSubmitted ? '1px solid #6c3fa0' : 'none',
+                backgroundColor: isSubmitted ? 'transparent' : '#6c3fa0',
+                color: isSubmitted ? '#6c3fa0' : '#fff',
                 cursor: 'pointer',
                 fontSize: '14px',
                 fontWeight: '500',
-                whiteSpace: 'nowrap'
+                whiteSpace: 'nowrap',
+                width: '120px',
+                height: '36px'
               }}
             >
               {isExpanded ? (isSubmitted ? 'Hide Submission' : 'Cancel') : (isSubmitted ? 'View Submission' : 'Upload Files')}
@@ -136,7 +139,7 @@ export default function App() {
                 </div>
                 <div style={{ marginBottom: '12px' }}>
                   {mockFiles.map((file, idx) => (
-                    <div key={idx} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 0', fontSize: '14px', color: '#333', borderBottom: '1px solid #e0e0e0' }}>
+                    <div key={idx} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 0', fontSize: '14px', color: '#333', borderBottom: '1px solid #e0e0e0', backgroundColor: '#fff' }}>
                       <span>{file.name}</span>
                       <span>{file.size}</span>
                     </div>
@@ -159,14 +162,12 @@ export default function App() {
                     marginBottom: '12px'
                   }}
                 >
-                  <svg style={{ width: '40px', height: '40px', margin: '0 auto 12px', display: 'block' }} viewBox="0 0 24 24" fill="none" stroke="#bbb" strokeWidth="2">
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                    <polyline points="17 8 12 3 7 8"></polyline>
-                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                  <svg style={{ width: '48px', height: '48px', margin: '0 auto 12px', display: 'block' }} viewBox="0 0 24 24" fill="none" stroke="#bbb" strokeWidth="2">
+                    <path d="M19 14c1.49-1.46 2.5-3.48 2.5-5.5A6.5 6.5 0 0 0 15 2c-1.8 0-3.5.5-5 1.33C7.5 2.5 5.8 2 4 2a6.5 6.5 0 0 0-6.5 6.5c0 2.02 1.01 4.04 2.5 5.5M12 8v8m0 0l-3-3m3 3l3-3"></path>
                   </svg>
                   <div style={{ fontSize: '14px', color: '#333', marginBottom: '4px' }}>
                     Drag and drop files here, or{' '}
-                    <span style={{ color: '#0066cc', cursor: 'pointer', textDecoration: 'underline' }}>
+                    <span style={{ color: '#6c3fa0', cursor: 'pointer', textDecoration: 'underline' }}>
                       browse
                     </span>
                   </div>
@@ -181,7 +182,9 @@ export default function App() {
                       color: '#fff',
                       cursor: 'pointer',
                       fontSize: '14px',
-                      fontWeight: '500'
+                      fontWeight: '500',
+                      width: '120px',
+                      height: '36px'
                     }}
                   >
                     Submit
@@ -197,8 +200,8 @@ export default function App() {
 
   const Header = () => (
     <div style={{
-      backgroundColor: '#f5f5f5',
-      borderBottom: '1px solid #ddd',
+      backgroundColor: '#fff',
+      boxShadow: '0 2px 8px rgba(0, 0, 0, 0.08)',
       padding: '12px 24px',
       display: 'flex',
       justifyContent: 'space-between',
@@ -207,8 +210,8 @@ export default function App() {
       {/* Left: Logo and title */}
       <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
         <div style={{
-          width: '32px',
-          height: '32px',
+          width: '40px',
+          height: '40px',
           backgroundColor: '#6c3fa0',
           borderRadius: '4px',
           display: 'flex',
@@ -216,7 +219,7 @@ export default function App() {
           justifyContent: 'center',
           color: '#fff',
           fontWeight: 'bold',
-          fontSize: '18px'
+          fontSize: '20px'
         }}>
           S
         </div>
@@ -253,15 +256,15 @@ export default function App() {
       {/* Right: Avatar and logout */}
       <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
         <div style={{
-          width: '32px',
-          height: '32px',
-          backgroundColor: '#333',
+          width: '36px',
+          height: '36px',
+          backgroundColor: '#999',
           borderRadius: '50%',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           color: '#fff',
-          fontSize: '12px',
+          fontSize: '13px',
           fontWeight: 'bold'
         }}>
           ZT
@@ -269,9 +272,9 @@ export default function App() {
         <button
           style={{
             padding: '6px 12px',
-            backgroundColor: '#333',
-            color: '#fff',
-            border: 'none',
+            backgroundColor: 'transparent',
+            color: '#6c3fa0',
+            border: '1px solid #6c3fa0',
             borderRadius: '4px',
             cursor: 'pointer',
             fontSize: '14px'
@@ -294,7 +297,7 @@ export default function App() {
     }}>
       {/* Column 1: TA Emails */}
       <div>
-        <div style={{ fontWeight: 'bold', color: '#6c3fa0', marginBottom: '8px' }}>
+        <div style={{ fontWeight: 'bold', color: '#6c3fa0', marginBottom: '12px', fontSize: '15px' }}>
           Teaching Assistant Emails
         </div>
         <div style={{ color: '#666', lineHeight: '1.6' }}>
@@ -306,7 +309,7 @@ export default function App() {
 
       {/* Column 2: Professor Contact */}
       <div>
-        <div style={{ fontWeight: 'bold', color: '#6c3fa0', marginBottom: '8px' }}>
+        <div style={{ fontWeight: 'bold', color: '#6c3fa0', marginBottom: '12px', fontSize: '15px' }}>
           Professor Contact
         </div>
         <div style={{ color: '#666', lineHeight: '1.6' }}>
@@ -317,11 +320,11 @@ export default function App() {
 
       {/* Column 3: Course Resources */}
       <div>
-        <div style={{ fontWeight: 'bold', color: '#6c3fa0', marginBottom: '8px' }}>
+        <div style={{ fontWeight: 'bold', color: '#6c3fa0', marginBottom: '12px', fontSize: '15px' }}>
           Course Discord/Forum
         </div>
         <div style={{ color: '#666', lineHeight: '1.6' }}>
-          <a href="#" style={{ color: '#0066cc', textDecoration: 'underline' }}>
+          <a href="#" style={{ color: '#6c3fa0', textDecoration: 'underline' }}>
             Join NLP 2026 Discord
           </a><br/>
           forum.tsinghua.nlp/nlp2026
